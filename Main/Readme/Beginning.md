@@ -1,8 +1,8 @@
 # Commencement
 
-```**Disclaimer**: Please note that all configurations and settings detailed in this guide are to be executed at your own risk. I bear no responsibility for any potential damage to your computer, its components, or any stress caused by following or not following the instructions. Be cautious, thoughtful, and informed when making changes to your system.
+>**Disclaimer**: Please note that all configurations and settings detailed in this guide are to be executed at your own risk. I bear no responsibility for any potential damage to your computer, its components, or any stress caused by following or not following the instructions. Be cautious, thoughtful, and informed when making changes to your system.
 
-It's important to understand that this guide does not offer a universal solution. The effectiveness of these configurations may vary based on individual hardware and driver conditions. Some users may observe a significant performance boost, while others might not perceive any tangible changes.```
+It's important to understand that this guide does not offer a universal solution. The effectiveness of these configurations may vary based on individual hardware and driver conditions. Some users may observe a significant performance boost, while others might not perceive any tangible changes.
 
 ## Phase 1: Preparing a Clean System
 
