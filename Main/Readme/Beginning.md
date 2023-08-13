@@ -9,3 +9,7 @@
 To begin, we require a clean slate, meaning a fresh installation of the Windows operating system. Concerning the choice of Windows version to install, I generally discourage the use of custom Windows builds. Many of these builds can be poorly constructed, riddled with bugs, or contain malware.
 
 However, I recommend considering either the standard LTSC version of Windows or an assembly from Flibustier. The Flibustier assembly incorporates a variety of system optimizations and eliminates superfluous functions and programs. Feel free to opt for the version that best suits your preferences and comfort level, especially if you harbor reservations about installing custom builds.
+
+When deciding between Windows 10 and Windows 11, it's worth noting that the performance of both operating systems is comparable in most respects. Despite initial concerns, Windows 11 has undergone significant fine-tuning and bug fixes since its release, bringing it on par with its predecessor in terms of stability and performance.
+
+Ultimately, the choice between Windows 10 and Windows 11 often boils down to personal preference and comfort. For some, the updated user interface and enhanced features of Windows 11 may offer a more convenient and aesthetically pleasing user experience. Personally, I lean towards installing Windows 11 due to its improved usability and design. However, both versions are viable for the optimization steps that follow in this guide.
