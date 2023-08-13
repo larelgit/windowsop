@@ -20,6 +20,6 @@ Before delving into system optimization, it's crucial to install all necessary c
 
 If your system features an Nvidia graphics card, visit the official Nvidia website and install the latest drivers. The same applies if you have an AMD graphics card.
 
-Regarding Nvidia, there is a belief that certain older driver versions might outperform the latest ones. This is usually a misconception and tends to be based on outdated information. Therefore, I strongly recommend installing the most recent driver version. For Nvidia users, consider installing Geforce Experience for easy driver updates and additional features.
+There is a belief that certain older driver versions might outperform the latest ones. This is usually a misconception and tends to be based on outdated information. Therefore, I strongly recommend installing the most recent driver version. For Nvidia users, consider installing Geforce Experience for easy driver updates and additional features.
 
 Also, you can use Snappy Driver Installer for this case, but it is recommended to install everything manually.
