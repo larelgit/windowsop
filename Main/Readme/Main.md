@@ -90,7 +90,7 @@ Get-WindowsPackage -Online | Where PackageName -like *QuickAssist* | Remove-Wind
 
 For ease of use, you can also download and run the file located in the Optimization folder. This file contains all these commands, allowing you to remove the programs with a single click.
 
-##4. Interrupt Affinity
+## 4. Interrupt Affinity
 
 Optimizing your Windows system involves manipulating the Interrupt Affinity of your drivers. This guide will take you through the process using Microsoft’s Interrupt-Affinity Policy Tool.
 
