@@ -169,3 +169,17 @@ In ISLC, you can also configure system memory cache cleaning. To do this, adjust
 ![image](https://github.com/larelgit/windowsop/assets/67206438/0e8a98b0-1d6b-46ea-b7f0-39954f79a922)
 
 > *Example of a correctly configured Intelligent Standby List Cleaner*
+
+## 8. MSI Mode
+
+So, why do we need to enable this MSI Mode? The answer is simple: in the past, only 4 interrupts were allocated for a single device. But with Message Signaled Interrupts (MSI), it's now possible to increase this number up to 32, significantly speeding up communication between devices.
+
+Most of the latest drivers from reputable manufacturers initially use the MSI interrupt mode, especially for PCI Express devices. However, enabling MSI for the USB Host Controller can also benefit overall system performance.
+
+To enable MSI Mode, we will use the MSI Utility version 2. Look for your graphics card and USB Host Controller in the utility (if you can't find it by name, the Device ID is also specified in the line with the name). Check the box in the MSI column, change the Interrupt Priority to High, and then click Apply.
+
+![image](https://github.com/larelgit/windowsop/assets/67206438/b8d38b9b-c785-46f8-b1e9-da7484f63788)
+
+> **Warning:** Do not set MSI Mode for all your devices, as this can lead to incorrect device operation.
+
+> **Note:** This setting reverts to the default value after updating the NVIDIA driver, so you'll need to re-enable MSI Mode after each driver update.
