@@ -40,8 +40,8 @@ Consider the following hardware for deactivation:
 - UMBus
 - Intel Graphics
 
-
 ![Untitled-2](https://github.com/larelgit/windowsop/assets/67206438/0b979e11-eeaf-4bec-bb42-934e0fe1a589)
+
 Bear in mind, this list is not exhaustive and the deactivation of hardware should be done judiciously, considering the unique needs and setup of your individual system. Always ensure to have a stable system backup to revert any changes, if necessary.
 
 ## 3. Removing Superfluous Programs
