@@ -28,8 +28,6 @@ The Device Manager, a potent tool for supervising the hardware devices installed
 Consider the following hardware for deactivation:
 
 - Composite Bus Enumerator
-- Intel Management Engine / AMD PSP
-- Intel SPI (flash) Controller
 - Microsoft GS Wavetable Synth
 - Microsoft Virtual Drive Enumerator (deactivate only if virtual drives are unused)
 - NDIS Virtual Network Adapter Enumerator
