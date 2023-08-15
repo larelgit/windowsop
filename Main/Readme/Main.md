@@ -161,6 +161,7 @@ For proper configuration, set the following parameters:
 - Launch ISLC on user login (TaskScheduler): Enabled
 - Enable custom timer resolution: Enabled
 - Wanted timer resolution: Set to 0.0ms
+- Polling Rate (ms): 250
 
 In ISLC, you can also configure system memory cache cleaning. To do this, adjust the parameter 'Free memory is lower than', which determines the minimum value of free memory. The optimal value is half the size of your system memory, after which the memory cache will be cleared. The parameter 'The list size is at least' determines the minimum size of cached memory. It's recommended to leave it at the default value of 1024MB.
 
