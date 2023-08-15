@@ -174,7 +174,7 @@ So, why do we need to enable this MSI Mode? The answer is simple: in the past, o
 
 Most of the latest drivers from reputable manufacturers initially use the MSI interrupt mode, especially for PCI Express devices. However, enabling MSI for the USB Host Controller can also benefit overall system performance.
 
-To enable MSI Mode, we will use the MSI Utility version 2. Look for your graphics card and USB Host Controller in the utility (if you can't find it by name, the Device ID is also specified in the line with the name). Check the box in the MSI column, change the Interrupt Priority to High, and then click Apply.
+To enable MSI Mode, we will use the MSI Utility version 2. Look for your graphics card in the utility. Check the box in the MSI column, change the Interrupt Priority to High, and then click Apply.
 
 ![image](https://github.com/larelgit/windowsop/assets/67206438/b8d38b9b-c785-46f8-b1e9-da7484f63788)
 
