@@ -11,7 +11,7 @@ The High Precision Event Timer (HPET) can sometimes interfere with system perfor
  `bcdedit /set useplatformtick yes`
  `bcdedit /set hypervisorlaunchtype off`
 
-# 2. Device Manager Optimization
+## 2. Device Manager Optimization
 
 The Device Manager, a potent tool for supervising the hardware devices installed on your Windows system, can be wielded effectively for optimization. The following tips offer guidance on its optimal utilization:
 
