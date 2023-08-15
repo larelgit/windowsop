@@ -34,7 +34,6 @@ Consider the following hardware for deactivation:
 - Microsoft Virtual Drive Enumerator (deactivate only if virtual drives are unused)
 - NDIS Virtual Network Adapter Enumerator
 - Remote Desktop Device Redirector Bus
-- SMBus
 - System speaker
 - Terminal Server Mouse/Keyboard drivers
 - UMBus
