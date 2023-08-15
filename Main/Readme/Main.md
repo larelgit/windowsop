@@ -116,7 +116,6 @@ The default installation directory is: `C:\Program Files (x86)\Microsoft Corpora
 3. If you have Hyper-Threading (HT) or Simultaneous Multithreading (SMT), use only one SMT sibling (i.e. CPUs 0/1 are SMT siblings, only use 0 or 1 but not both).
 4. Press the `Advanced...` button for more options. This is not typically necessary unless you have drivers that use MSI-X or you have a multi-socket system.
 5. Do not restart drivers for storage devices or root ports with storage devices attached. Instead, restart your PC to prevent the risk of data corruption.
-6. Use `xperf` to verify if the affinities have been set correctly. See below for an `xperf` script.
 
 ### Special Cases
 
