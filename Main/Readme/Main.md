@@ -92,20 +92,36 @@ For ease of use, you can also download and run the file located in the Optimizat
 
 ## Interrupt Affinity
 
-Using Microsoft’s [Interrupt-Affinity Policy Tool](https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk) (backup link), you can set affinity for a driver’s interrupts. Do not go overboard as you can make the system perform worse if you randomly start changing affinities. Ideally, each device should have its own core or left alone if you have already dedicated your most important devices to every available core.
+Optimizing your Windows system involves manipulating the Interrupt Affinity of your drivers. This guide will take you through the process using Microsoft’s Interrupt-Affinity Policy Tool.
 
-Changing the interrupt affinity of some drivers may prevent you from booting. If this is the case, use recovery mode to boot from the last known good configuration.
+**Note:** Be cautious not to overdo setting affinities, as it can degrade your system performance if done incorrectly. A good rule of thumb is to assign each device its own core, or leave them alone if your most important devices are already assigned to all available cores.
 
-Default install dir: `“C:\Program Files (x86)\Microsoft Corporation\Interrupt Affinity Policy Tool”` (use the x64 executable)
+**Warning:** Changing the interrupt affinity of some drivers may prevent your system from booting. If this happens, boot in recovery mode to revert to the last known good configuration.
 
-### Steps to Configure Interrupt Affinity
+### Installation
 
-1. Install Interrupt-Affinity Policy Tool, then run as an admin.
-2. Open Device Manager and click “View” → ”Devices by connection”. Then expand all devices, as you will need this to see which devices are connected to which port/bridge.
-3. If you open the properties of the device, it will show the location “PCI bus #, device #, function #,” you will need this in case multiple devices share the same name (e.g., two xHCI controllers, both named “USB xHCI Compliant Host Controller”)
-4. Select a driver and click “Set Mask” (this is for `IrqPolicySpecifiedProcessors`).
-5. Select the core you want the driver to be executed on.
-6. If you have HT or SMT, use only one SMT sibling (i.e., CPUs 0/1 are SMT siblings, only use 0 or 1 but not both).
-7. Press the “Advanced…” button for other choices (not useful unless you have drivers that use MSI-X or you have a multi-socket system).
-8. Do not restart drivers for storage devices or root ports with storage devices attached, restart your PC instead to prevent the risk of data corruption.
-9. Use xperf to see if the affinities have been set properly, see below for xperf script.
+The default installation directory is: `C:\Program Files (x86)\Microsoft Corporation\Interrupt Affinity Policy Tool` (use the x64 executable).
+
+1. Install the Interrupt-Affinity Policy Tool, then run as administrator.
+2. Open Device Manager and navigate to `View > Devices by connection`. Expand all devices to see which devices are connected to which port/bridge.
+3. For each device, open its properties to view the location in the format: `“PCI bus #, device #, function #”`. This information is crucial when dealing with devices that share the same name (e.g., two xHCI controllers, both named `“USB xHCI Compliant Host Controller”`).
+
+### Setting Affinity
+
+1. Select a driver and click `Set Mask`. This is for `IrqPolicySpecifiedProcessors`.
+2. Select the core you want the driver to execute on.
+3. If you have Hyper-Threading (HT) or Simultaneous Multithreading (SMT), use only one SMT sibling (i.e. CPUs 0/1 are SMT siblings, only use 0 or 1 but not both).
+4. Press the `Advanced...` button for more options. This is not typically necessary unless you have drivers that use MSI-X or you have a multi-socket system.
+5. Do not restart drivers for storage devices or root ports with storage devices attached. Instead, restart your PC to prevent the risk of data corruption.
+6. Use `xperf` to verify if the affinities have been set correctly. See below for an `xperf` script.
+
+### Special Cases
+
+Non-MSI-X drivers perform best when their affinity is set to a single core (`IrqPolicySpecifiedProcessors`). If a device uses MSI-X, it will use `IRQPolicySpreadMessagesAcrossAllCores` by design, regardless of the affinity you set. To force an MSI-X device to a specific core, you must set its message limit to 1 via MSI Util. Remember to reset the affinity every time you update a driver (such as your GPU driver).
+
+#### Examples of devices to change:
+
+- **GPU**: Setting the graphics card to a single core gives the best performance, but setting it to a busy core will degrade performance. Determine the optimal core through benchmarking.
+- **USB controllers (xHCI/EHCI)**
+- **Audio controllers**: This does not apply to USB audio devices; change USB controller interrupt affinity instead.
+- **Network controller**: When using RSS, set to `IrqPolicySpreadMessagesAcrossAllProcessors`. Also, change `RssBaseCpu` as interrupts will always land on the `RssBaseCpu` first, then each consecutive CPU (depending on how many RSS CPUs). You can change `RssBaseCpu` via the GUI from Device Manager under your network adapter’s properties. If the setting is unavailable, create a dword using `regedit` called `“RssBaseCpu" under `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Ndis\Parameters`, then enter the number for the corresponding CPU (e.g., 3).
