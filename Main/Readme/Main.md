@@ -40,7 +40,7 @@ Consider the following hardware for deactivation:
 - UMBus
 - Intel Graphics
 
-![Untitled-2](https://github.com/larelgit/windowsop/assets/67206438/0b979e11-eeaf-4bec-bb42-934e0fe1a589)
+![Untitled-2](https://github.com/larelgit/windowsop/assets/67206438/db5d75fe-9238-42ad-a44b-3351fb280fec)
 
 Bear in mind, this list is not exhaustive and the deactivation of hardware should be done judiciously, considering the unique needs and setup of your individual system. Always ensure to have a stable system backup to revert any changes, if necessary.
 
@@ -129,4 +129,5 @@ Non-MSI-X drivers perform best when their affinity is set to a single core (`Irq
 - **Audio controllers**: This does not apply to USB audio devices; change USB controller interrupt affinity instead.
 - **Network controller**: When using RSS, set to `IrqPolicySpreadMessagesAcrossAllProcessors`. Also, change `RssBaseCpu` as interrupts will always land on the `RssBaseCpu` first, then each consecutive CPU (depending on how many RSS CPUs). You can change `RssBaseCpu` via the GUI from Device Manager under your network adapter’s properties. If the setting is unavailable, create a dword using `regedit` called `“RssBaseCpu" under `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Ndis\Parameters`, then enter the number for the corresponding CPU (e.g., 3).
   
-![Untitled-1](https://github.com/larelgit/windowsop/assets/67206438/428832ac-6ecb-47aa-a886-961c83e44d1f)
+![Untitled-1](https://github.com/larelgit/windowsop/assets/67206438/9f9c8eae-82be-4c5a-a3c4-3e1506f145f9)
+
