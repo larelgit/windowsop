@@ -39,7 +39,8 @@ Consider the following hardware for deactivation:
 - Terminal Server Mouse/Keyboard drivers
 - UMBus
 - Intel Graphics
-![Untitled-2](https://github.com/larelgit/windowsop/assets/67206438/24e209fa-be80-4040-be53-54b698b79d66)
+![Untitled-2](https://github.com/larelgit/windowsop/assets/67206438/0b979e11-eeaf-4bec-bb42-934e0fe1a589)
+
 
 Bear in mind, this list is not exhaustive and the deactivation of hardware should be done judiciously, considering the unique needs and setup of your individual system. Always ensure to have a stable system backup to revert any changes, if necessary.
 
