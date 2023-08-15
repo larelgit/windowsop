@@ -131,7 +131,7 @@ Non-MSI-X drivers perform best when their affinity is set to a single core (`Irq
   
 ![Untitled-1](https://github.com/larelgit/windowsop/assets/67206438/9f9c8eae-82be-4c5a-a3c4-3e1506f145f9)
 
-## Disabling Processor Idle States
+## 5. Disabling Processor Idle States
 
 By disabling idle, you can force your processor to run at maximum clocks. This is particularly helpful if you have a locked CPU that does not support overclocking (mostly Intel non-K SKUs). If you have a static all-core overclock, this step can be skipped. However, your CPU will only be running at C1 and not C0, which is the state where the CPU is fully responsive. Disabling idle helps minimize jitter and latency caused by your CPU constantly switching clocks and C-states. 
 
@@ -144,3 +144,9 @@ By disabling idle, you can force your processor to run at maximum clocks. This i
     powercfg -attributes SUB_PROCESSOR 5d76a2ca-e8c0-402f-a133-2158492d58ad -ATTRIB_HIDE
     ```
 
+## 6. Disabling Hibernation
+
+If the computer is stationary and hibernation mode will not be used, you can optimize disk space by disabling the hibernation file:
+```
+powercfg -h off
+```
