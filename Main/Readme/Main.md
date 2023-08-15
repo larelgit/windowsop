@@ -11,25 +11,31 @@ The High Precision Event Timer (HPET) can sometimes interfere with system perfor
  `bcdedit /set useplatformtick yes`
  `bcdedit /set hypervisorlaunchtype off`
 
-## 2. Optimizing Device Manager
+# 2. Device Manager Optimization
 
-The Device Manager is a useful tool for managing the hardware devices installed on your system. Here are some tips to optimize its use:
+The Device Manager, a potent tool for supervising the hardware devices installed on your Windows system, can be wielded effectively for optimization. The following tips offer guidance on its optimal utilization:
 
-- Open the Device Manager by typing `devmgmt.msc` into the Run dialog box (Win + R).
-- Carefully disable any hardware you're not currently using. Be cautious not to disable devices you need.
-- Note: Uninstalling a driver via Device Manager usually results in it being reinstalled after a reboot. To completely disable a driver, it's better to disable it rather than uninstall it.
-- When you disable a device in Device Manager, its driver is unloaded. This can free up CPU time as drivers can interrupt the CPU, causing potential system halts (stutters), especially with poorly programmed drivers.
-- What to disable:
-  
-Composite Bus Enumerator
-Intel Management Engine / AMD PSP
-Intel SPI (flash) Controller
-Microsoft GS Wavetable Synth
-Microsoft Virtual Drive Enumerator (if not using virtual drives)
-NDIS Virtual Network Adapter Enumerator
-Remote Desktop Device Redirector Bus
-SMBus
-System speaker
-Terminal Server Mouse/Keyboard drivers
-UMBus
-Intel Graphics
+1. Initiate the Device Manager by entering `devmgmt.msc` into the Run dialog box (accessed with `Win + R`).
+
+2. Wield caution as you deactivate any hardware currently idle. It is vital to ensure you don't inadvertently disable devices essential to your system's operation.
+
+   > **Note:** Uninstalling a driver via Device Manager typically prompts its reinstallation post-reboot. To ensure its comprehensive deactivation, it is more efficacious to disable the driver rather than uninstalling it.
+
+3. The deactivation of a device in Device Manager results in the unloading of its corresponding driver. This action potentially liberates CPU time, as drivers can interrupt CPU functionality resulting in prospective system pauses (designated as stutters), especially prevalent with poorly coded drivers.
+
+Consider the following hardware for deactivation:
+
+- Composite Bus Enumerator
+- Intel Management Engine / AMD PSP
+- Intel SPI (flash) Controller
+- Microsoft GS Wavetable Synth
+- Microsoft Virtual Drive Enumerator (deactivate only if virtual drives are unused)
+- NDIS Virtual Network Adapter Enumerator
+- Remote Desktop Device Redirector Bus
+- SMBus
+- System speaker
+- Terminal Server Mouse/Keyboard drivers
+- UMBus
+- Intel Graphics
+
+Bear in mind, this list is not exhaustive and the deactivation of hardware should be done judiciously, considering the unique needs and setup of your individual system. Always ensure to have a stable system backup to revert any changes, if necessary.
