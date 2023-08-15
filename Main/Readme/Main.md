@@ -94,9 +94,9 @@ For ease of use, you can also download and run the file located in the Optimizat
 
 Optimizing your Windows system involves manipulating the Interrupt Affinity of your drivers. This guide will take you through the process using Microsoft’s Interrupt-Affinity Policy Tool.
 
->**Note:** Be cautious not to overdo setting affinities, as it can degrade your system performance if done incorrectly. A good rule of thumb is to assign each device its own core, or leave them alone if your most important devices are already assigned to all available cores.
+> **Note:** Be cautious not to overdo setting affinities, as it can degrade your system performance if done incorrectly. A good rule of thumb is to assign each device its own core, or leave them alone if your most important devices are already assigned to all available cores.
 
->**Warning:** Changing the interrupt affinity of some drivers may prevent your system from booting. If this happens, boot in recovery mode to revert to the last known good configuration.
+> **Warning:** Changing the interrupt affinity of some drivers may prevent your system from booting. If this happens, boot in recovery mode to revert to the last known good configuration.
 
 ### Installation
 
