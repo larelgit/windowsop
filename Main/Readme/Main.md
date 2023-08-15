@@ -135,7 +135,7 @@ Non-MSI-X drivers perform best when their affinity is set to a single core (`Irq
 
 By disabling idle, you can force your processor to run at maximum clocks. This is particularly helpful if you have a locked CPU that does not support overclocking (mostly Intel non-K SKUs). If you have a static all-core overclock, this step can be skipped. However, your CPU will only be running at C1 and not C0, which is the state where the CPU is fully responsive. Disabling idle helps minimize jitter and latency caused by your CPU constantly switching clocks and C-states. 
 
-**Note:** Disabling idle makes your processor run very warm, so it's essential to have adequate cooling. Do not disable idle if you have SMT/HT enabled as Windows puts the other logical processor of a core to sleep to prevent contention. On Windows 10, CPU usage will be displayed as 100% in Task Manager after disabling idle states.
+> **Note:** Disabling idle makes your processor run very warm, so it's essential to have adequate cooling. Do not disable idle if you have SMT/HT enabled as Windows puts the other logical processor of a core to sleep to prevent contention. On Windows 10, CPU usage will be displayed as 100% in Task Manager after disabling idle states.
 
 ### To do:
  - Run CMD as an administrator:
