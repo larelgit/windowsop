@@ -181,3 +181,18 @@ To enable MSI Mode, we will use the MSI Utility version 2. Look for your graphic
 > **Warning:** Do not set MSI Mode for all your devices, as this can lead to incorrect device operation.
 
 > **Note:** This setting reverts to the default value after updating the NVIDIA driver, so you'll need to re-enable MSI Mode after each driver update.
+
+## 9. ParkControl
+CPU Core Parking is a feature that allows CPU cores to be dynamically disabled and put into a low-power sleep state, known as C6, to save power when the system is idle. However, this power saving comes with a trade-off: there can be latency when the parked CPU cores need to be reactivated to execute code.
+
+Initially, core parking was controlled entirely by the operating system. The aggressive core parking of Windows led to inefficiencies during bursting CPU loads. To address this, Intel moved the control of core parking onto the chip starting with the Skylake generation, and AMD followed suit. However, the Windows power plan parameters are still set to aggressively park CPU cores. This occurs even with the default 'High Performance' power plan. The new 'Ultra Performance' power plan disables core parking entirely, copying what Bitsum did with their 'Bitsum Highest Performance' power plan.
+
+ParkControl and Process Lasso are tools that allow you to configure CPU core parking and frequency scaling more easily. They also allow for dynamic switching to a higher-performance power plan. For example, with Process Lasso, you can automatically switch to the 'Bitsum Highest Performance' power plan when you start a game, and then revert back to the 'Balanced' power plan when you exit.
+
+ParkControl has a feature called Dynamic Boost that allows you to set active and idle power plans. Process Lasso has a similar feature called IdleSaver.
+
+![image](https://github.com/larelgit/windowsop/assets/67206438/0bd76637-c06d-47cd-8dfd-c62d9434b52e)
+
+> *Example of a correctly configured Intelligent Standby List Cleaner*
+
+> Experimenting with core parking settings can lead to significant performance improvements, especially in systems that are subject to bursting CPU loads. However, it is essential to monitor system stability and temperatures, especially if you disable core parking entirely.
