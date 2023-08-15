@@ -167,8 +167,6 @@ In ISLC, you can also configure system memory cache cleaning. To do this, adjust
 
 > **Note:** To avoid additional micro-stutters when clearing the memory cache, especially if you have limited memory or if programs use it actively, it's recommended to test this setting with different parameters to find the optimal one for your specific use case.
 
-After setting up, press 'Start' and verify whether the timer is fixed. The value of the 'Current timer resolution' should be strictly equal to 0.5ms and should not change. Note that the value may update with a delay!
-
 ![image](https://github.com/larelgit/windowsop/assets/67206438/0e8a98b0-1d6b-46ea-b7f0-39954f79a922)
 
 > *Example of a correctly configured Intelligent Standby List Cleaner*
