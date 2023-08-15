@@ -7,9 +7,11 @@ The High Precision Event Timer (HPET) can sometimes interfere with system perfor
 
 - Open the Command Prompt as an administrator.
 - Copy and paste the following commands:
- `bcdedit /set disabledynamictick yes`
- `bcdedit /set useplatformtick yes`
- `bcdedit /set hypervisorlaunchtype off`
+```
+ bcdedit /set disabledynamictick yes
+ bcdedit /set useplatformtick yes
+ bcdedit /set hypervisorlaunchtype off
+```
 
 ## 2. Device Manager Optimization
 
@@ -125,4 +127,5 @@ Non-MSI-X drivers perform best when their affinity is set to a single core (`Irq
 - **USB controllers (xHCI/EHCI)**
 - **Audio controllers**: This does not apply to USB audio devices; change USB controller interrupt affinity instead.
 - **Network controller**: When using RSS, set to `IrqPolicySpreadMessagesAcrossAllProcessors`. Also, change `RssBaseCpu` as interrupts will always land on the `RssBaseCpu` first, then each consecutive CPU (depending on how many RSS CPUs). You can change `RssBaseCpu` via the GUI from Device Manager under your network adapter’s properties. If the setting is unavailable, create a dword using `regedit` called `“RssBaseCpu" under `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Ndis\Parameters`, then enter the number for the corresponding CPU (e.g., 3).
+  
 ![Untitled-1](https://github.com/larelgit/windowsop/assets/67206438/428832ac-6ecb-47aa-a886-961c83e44d1f)
